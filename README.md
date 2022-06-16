@@ -9,3 +9,6 @@ API Gateway is a service where its by passing the service request to respective 
 Later logs added to trace them. Then Zipkin and Sleuth is configured to the 2 clients and monitored the logs at zipkin dahboard.
 
 ![image](https://user-images.githubusercontent.com/70185865/174142374-ec5b8257-e73e-4399-85cd-1c3d72b4817e.png)
+
+ref:
+https://www.youtube.com/watch?v=BnknNTN8icw&t=4118s
