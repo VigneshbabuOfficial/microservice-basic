@@ -1,5 +1,7 @@
 package com.miniappservice1;
 
+import java.util.logging.Logger;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -19,6 +21,11 @@ public class ClientService1Application {
 	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
+	}
+	
+	@Bean
+	public Logger logger() {
+		return Logger.getLogger("ClientService1Application");
 	}
 
 }

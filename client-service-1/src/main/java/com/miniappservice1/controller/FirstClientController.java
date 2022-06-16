@@ -1,5 +1,7 @@
 package com.miniappservice1.controller;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,22 +15,25 @@ public class FirstClientController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	@Autowired
+	private Logger logger;
+	
 	@GetMapping
 	public String getData() {
-		System.out.println("------  CLIENT-SERVICE-1 - FIRSTCLIENTCONTROLLER -  GETDATA  ------------------");
+		logger.info("------  FIRSTCLIENTCONTROLLER -  GETDATA  ------------------");
 		return "CLIENT-SERVICE-1 IS UP !!!";
 		
 	}
 	
 	@GetMapping("/from-others")
 	public String getInfoFromOthers() {
-		System.out.println("------  CLIENT-SERVICE-1 - FIRSTCLIENTCONTROLLER -  getInfoFromOthers  ------------------");
+		logger.info("------  FIRSTCLIENTCONTROLLER -  getInfoFromOthers  ------------------");
 		return restTemplate.getForObject("http://client-service-2/client-service-2/for-others", String.class);
 	}
 	
 	@GetMapping("/for-others")
 	public String getInfoForOthers() {
-		System.out.println("------  CLIENT-SERVICE-1 - FIRSTCLIENTCONTROLLER -  getInfoForOthers  ------------------");
+		logger.info("------  FIRSTCLIENTCONTROLLER -  getInfoForOthers  ------------------");
 		return "CLIENT-SERVICE-1 IS INVOKED !!!";
 	}
 
